@@ -8,13 +8,13 @@ var server = http.createServer(function(request,response){
     });
 
     request.on('end', function() {
-        var querystring = querystring.parse(postdata);
+        var parsedQuery = querystring.parse(postdata);
         console.log(querystring);
         response.writeHead(200, {'Content-Type':'text/html'})
         response.end('value of val1='+ result);
     })
 });
 
-server.listen(8000, function(){
+server.listen(8080, function(){
     console.log('Server is running....')
 })
